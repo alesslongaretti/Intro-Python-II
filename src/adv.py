@@ -1,5 +1,6 @@
 from room import Room
 from player import Player
+from item import Item
 
 # Declare all the rooms
 
@@ -38,6 +39,16 @@ room['treasure'].s_to = room['narrow']
 # Main
 #
 
+room['outside'].items.append(Item("book", "pen"))
+room['outside'].items.append(Item("book", "pen"))
+room['foyer'].items.append(Item("bookFoyer", "penFoyer"))
+room['overlook'].items.append(Item("bookOverlook", "penOverlook"))
+room['narrow'].items.append(Item("bookNarrow", "penNarrow"))
+room['treasure'].items.append(Item("bookTreasure", "penTreasure"))
+
+
+
+
 # Make a new player object that is currently in the 'outside' room.
 
 new_player = Player('ale', room['outside'])
@@ -58,7 +69,7 @@ new_player = Player('ale', room['outside'])
 directions = ["n", "s", "e", "w"]
 
 while True:
-    print(new_player.room, new_player.room.description)
+    print(new_player)
     user_input = input("\nWhere do you want to go (n,s,e or w)? Type q to quit the game: ")
 
     if user_input == "q":
@@ -67,5 +78,9 @@ while True:
     elif user_input in directions:
         new_player.change_room(user_input)
     else:
-        print("\nINVALID INPUT, TRY AGAIN!\n") 
+        print("\nINVALID INPUT, TRY AGAIN!\n")
+
+
+
+
         

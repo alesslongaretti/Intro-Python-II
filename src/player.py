@@ -5,9 +5,10 @@ class Player:
     def __init__(self, name, room):
         self.name = name
         self.room = room
+        self.items = []
 
     def __str__(self):
-        output = f"{self.name} is in room {self.room}"
+        output = f"Welcome {self.name} {self.room}"
         return output
 
     def change_room(self, direction):
