@@ -1,8 +1,10 @@
 class Item:
-    def __init__(self,item_name,item_description):
-        self.item_name = item_name
-        self.item_description = item_description
+    def __init__(self,name,description):
+        self.name = name
+        self.description = description
 
-    def __str__(self):
-        output = f"{self.item_name}: {self.item_description}"
-        return output
+    def on_take(self):
+        print(f"\nYou have picked up *{self.name}*\n")
+
+    def on_drop(self):
+        print(f"\nYou have dropped *{self.name}*\n")
